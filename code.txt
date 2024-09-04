@@ -1,0 +1,63 @@
+function updateEntry() {
+  entryDisplay.innerHTML = "";
+  for (var key in dictionary) {
+    eval ('let div' + key + '= document.createElement("div");');
+    eval ('div' + key + ".className = 'entry';");
+    eval ('div' + key + ".id = 'entry' + " + key + ';');
+
+    let entryTitle = dictionary[key]['Title'] + '     ' + dictionary[key]['Date'];
+
+    eval ('div' + key + ".innerHTML = " + entryTitle);
+    // adding eventlistener to edit entry
+
+    eval ('div' + key + ".addEventListener('click', editEntryFunction(dictionary[key]['ID'], dictionary[key]['Title'], dictionary[key]['Date'], dictionary[key]['Content']));");
+    // divName.addEventListener('click', (e) => {
+    //   editEntryID = dictionary[key]['ID'];
+    //   editTitle.value = dictionary[key]['Title'];
+    //   editDate.value = dictionary[key]['Date'];
+    //   editContent.value = dictionary[key]['Content'];
+    //   editEntryForm.style.display = "block";
+    // })
+    entryDisplay.appendChild(eval("div" + key));
+  }
+  console.log(dictionary);
+}
+
+function editEntryFunction(i, t, d, c) {
+  editEntryID = i;
+  editTitle.value = t;
+  editDate.value = d;
+  editContent.value = c;
+  editEntryForm.style.display = "block";
+}
+
+
+
+function updateEntry() {
+  entryDisplay.innerHTML = "";
+  for (var key in dictionary) {
+    // eval('let ' + 'div' + 'key' + ' = document.createElement("div");');
+
+    let div = document.createElement("div");
+    div.className = "entryName";
+    div.id = "entry" + key;
+    let entryTitle = dictionary[key]['Title'] + '     ' + dictionary[key]['Date'];
+    div.innerHTML = entryTitle;
+    // // adding eventlistener to edit entry
+    // let divName = document.querySelector(divid);
+    // console.log(divName);
+    .addEventListener('click', (e) => {
+      editEntryID = dictionary[key]['ID'];
+      editTitle.value = dictionary[key]['Title'];
+      editDate.value = dictionary[key]['Date'];
+      editContent.value = dictionary[key]['Content'];
+      editEntryForm.style.display = "block";
+    })
+    console.log(div);
+    entryDisplay.appendChild(div);
+  }
+  console.log(dictionary);
+}
+function openUpdateEntry() {
+  addEntryForm.style.display = "block";
+}

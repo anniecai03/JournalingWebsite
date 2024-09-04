@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <title>Title Journal</title>
+</head>
+
+<body>
+  <h1 class="title" id="entryTitle">Journal</h1>
+
+  <!-- for adding entries -->
+  <button class="addEntryButton" id="addEntryButton">Add Entry</button>
+  <div class="entryForm" id="addEntryForm">
+    <form class="entryForm">
+      <h1>Add Entry</h1>
+      <label for="entryTitleInput" class="entryLabel"><b>Title</b></label>
+      <input type="text" placeholder="Enter Title" name="entryTitle" id="entryTitleInput" required>
+
+      <label for="entryDate" class="entryLabel"><b>Date</b></label>
+      <input type="date" name="entryDate" id="entryDate" required>
+      <br>
+      <input type="text" name="entryContent" id="entryContent" required>
+      <br>
+      <button type="submit" id="submitNewEntry" class="button" value="Submit">Create Entry</button>
+      <button type="button" id="closeCreateEntry" class="button">Close</button>
+    </form>
+  </div>
+
+  <!-- for editing entries -->
+  <div class="entryForm" id="editEntryForm">
+    <form class="entryForm">
+      <h1>Edit Entry</h1>
+      <label for="editTitle" class="entryLabel"><b>Title</b></label>
+      <input id="editTitle" type="text" placeholder="Enter Title" name="entryTitleInput">
+      <label for="editDate" class="entryLabel"><b>Date</b></label>
+      <input type="date" placeholder="Enter Date" name="editDate" id="editDate">
+      <br>
+      <input type="text" name="editContent" id="editContent">
+      <br>
+      <button type="submit" id="submitEditEntry" class="button" value="Submit">Save Entry</button>
+      <button type="button" id="closeEditEntry" class="button">Close</button>
+    </form>
+  </div>
+
+  <div class="entryDisplay" id="entryDisplay">
+  </div>
+  <script src="js/scriptJournal.js"></script>
+</body>
+
+</html>
